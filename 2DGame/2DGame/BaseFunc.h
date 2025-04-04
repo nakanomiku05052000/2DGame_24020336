@@ -5,6 +5,7 @@
 //#include <window.h>
 #include <string>
 #include <SDL.h>
+#include <vector>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
@@ -24,10 +25,13 @@ const int COLOR_KEY_B = 180;
 
 const int RENDER_DRAW_COLOR = 0xff;
 
+const int fps = 25;
+
 #define TILE_SIZE 64
 
 #define MAX_MAP_X 400
 #define MAX_MAP_Y 10
+#define MONEY 4
 
 typedef struct Input
 {
@@ -49,6 +53,12 @@ typedef struct Map
 	int tile[MAX_MAP_Y][MAX_MAP_X];
 	char* file_name_;
 };
+
+namespace SDLBaseFunc
+{
+	bool CheckCollision(const SDL_Rect& object1, const SDL_Rect& object2); 
+}
+
 
 #endif
  

@@ -54,12 +54,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>SDK Path\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>SDK Path\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -85,21 +86,35 @@
   <ItemGroup>
     <ClInclude Include="BaseFunc.h" />
     <ClInclude Include="BaseObject.h" />
+    <ClInclude Include="BossObject.h" />
+    <ClInclude Include="BulletObject.h" />
+    <ClInclude Include="ExplosionObject.h" />
     <ClInclude Include="Game_Map.h" />
     <ClInclude Include="MainObject.h" />
+    <ClInclude Include="PlayerPower.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextObject.h" />
+    <ClInclude Include="ThreatsObject.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseFunc.cpp" />
     <ClCompile Include="BaseObject.cpp" />
+    <ClCompile Include="BossObject.cpp" />
+    <ClCompile Include="BulletObject.cpp" />
+    <ClCompile Include="ExplosionObject.cpp" />
     <ClCompile Include="Game_Map.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainObject.cpp" />
+    <ClCompile Include="PlayerPower.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TextObject.cpp" />
+    <ClCompile Include="ThreatsObject.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
